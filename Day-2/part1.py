@@ -4,7 +4,7 @@ green = 13
 blue = 14
 sum = 0
 
-file = open("Day-2/input.txt", "r")
+file = open("Inputs/day2.txt", "r")
 
 def check_possible(counts):
     match counts[1]:
@@ -26,6 +26,7 @@ for line in file:
     game = games[0].strip("Game ")
     games[1] = games[1].strip("\n")
     sets = games[1].split("; ")
+
     for set in sets:
         pulls = set.split(", ")
         for pull in pulls:
@@ -37,10 +38,7 @@ for line in file:
             break
     if impossible:
         continue
-    possible.append(game)
-                    
-for game in possible:
     sum += int(game)
 
 print(sum)
-            
+file.close()

@@ -1,7 +1,7 @@
 sum = 0
 power = []
 
-file = open("Day-2/input.txt", "r")
+file = open("Inputs/day2.txt", "r")
 
 def get_mins(pull, minrgb):
     match pull[1]:
@@ -27,10 +27,8 @@ for line in file:
         for pull in pulls:
             pull = pull.split(" ")
             minrgb = get_mins(pull, minrgb)
-    power.append(minrgb[0] * minrgb[1] * minrgb[2])
 
-for value in power:
-    sum += value
+    sum += minrgb[0] * minrgb[1] * minrgb[2]
 
 print(sum)
-    
+file.close()
